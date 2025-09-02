@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+ {% block main %}
+
+
+<div class="row mt-4">
+  <style>
+    .dh{
+      background-image: url(../static/img/R.jpg);
+      background-size: cover;
+      width: 100vw;
+      display: flex;
+      height: auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #os{
+      background-color: rgba(20, 129, 231, 0.815);
+      width: 50vw;
+      height:50vh;
+
+    }
+  </style>
+  <div class="dh col-sm-4 mx-auto">
+     <div class="row">
+  <div class="col-sm-12 ">
+   <h2 class="text mt-3 mb-1 text-white">Login </h2>
+  </div>
+</div>
+    {% if messages %}
+      {% for m in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{m}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+      {% endfor %}
+      {% endif %}
+
+    <form id="os" method="post" class="p-5 mb-5 mt-3">
+        {% csrf_token %}
+      <div class="mb-3 ">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input
+          type="email"name="username"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input
+          type="password"name="password"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+        <label class="form-check-label" for="exampleCheck1">Reminder Me</label>
+      </div>
+      <button type="submit" class="btn btn-primary">LOGIN</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

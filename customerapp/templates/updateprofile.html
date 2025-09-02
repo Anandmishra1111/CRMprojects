@@ -1,0 +1,49 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block customer %}
+<h4>Customer / Updateprofile</h4>
+<div class="row">
+    <div class="col-sm-8 mx-auto">
+        <div class="card p-4">
+            <div class="text-center">
+                {% if customer.picture %}
+                    <img src="{{ customer.picture.url }}" alt="Profile Picture" height="120px" class="rounded-circle">
+                {% else %}
+                    No profile picture
+                {% endif %}
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="row g-4 mt-4">
+                <div class="col-sm-6">
+                    Name <input type="text" name="name" value="{{customer.name}}" class="form-control">
+                </div>
+                
+                <div class="col-sm-6">
+                    Email <input type="text" name="email" value="{{customer.email}}" class="form-control" readonly>
+                </div>
+               
+                <div class="col-sm-6">
+                    Contact No  <input type="text" name="contactno" value="{{customer.contactno}}" class="form-control">
+                </div>
+                 <div class="col-sm-6">
+                    Gender <select name="gender" class="form-control">
+                        <option value="{{customer.gender}}" selected>{{customer.gender}}</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                 <div class="col-sm-12">
+                    Address <textarea name="address" class="form-control">{{customer.address}}</textarea>
+                </div>
+                <div class="col-sm-12">
+                    Choose New Profile
+                    <input type="file" name="picture" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary"> Update Profile</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block main %}
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | CRM Project</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    .features {
+      margin-top: 20px;
+    }
+
+    .features h2 {
+      margin-bottom: 15px;
+      color: #34495e;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #2980b9;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      background: #2c3e50;
+      color: white;
+      border-radius: 0 0 12px 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>About Our CRM</h1>
+    <p>
+      Ye CRM (Customer Relationship Management) system banaya gaya hai taaki 
+      businesses apne customers ke data ko manage kar sake, sales process ko 
+      simplify karein aur growth ko track kar sakein.
+    </p>
+    <p>
+      Isme aapko easy interface ke sath sales, tasks, follow-ups aur reports ko 
+      ek hi jagah par manage karne ka option milega.
+    </p>
+
+    <div class="features">
+      <h2>Key Features</h2>
+      <div class="feature-list">
+        <div class="card">
+          <h3>📊 Sales Tracking</h3>
+          <p>Deal pipelines aur customer interactions track karna easy ho jata hai.</p>
+        </div>
+        <div class="card">
+          <h3>👥 Customer Management</h3>
+          <p>Customer data aur history ko ek jagah safe aur accessible rakha jata hai.</p>
+        </div>
+        <div class="card">
+          <h3>⏰ Task Reminders</h3>
+          <p>Meetings, calls aur follow-ups ke liye automatic reminders.</p>
+        </div>
+        <div class="card">
+          <h3>📈 Reports & Analytics</h3>
+          <p>Performance aur growth track karne ke liye detailed reports.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Developed by <b>Anand Mishra</b> | CRM Project © 2025
+    </footer>
+  </div>
+</body>
+</html>
+
+
+{% endblock %}

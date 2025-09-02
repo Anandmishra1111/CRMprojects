@@ -1,0 +1,47 @@
+{% extends 'adminbase.html'  %}
+{% load static %}
+{% block admin %}
+
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <div class="page-header-title">
+            <h4 class="m-b-10"> Admin/Views Enquiries</h4>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>S.NO</th>
+                        <th>Name</th>
+                        <th>Contect</th>
+                        <th>Subject</th>
+                        <th>Message</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <form method="post"></form>
+    </div>
+  </div>
+</div>
+  
+
+
+{% endblock %}

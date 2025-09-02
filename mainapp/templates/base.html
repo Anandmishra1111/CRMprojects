@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}CRM Project{% endblock %}</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <style>
+      body {
+        width: 100vw;
+        overflow-x: hidden;
+      }
+      .navbar .nav-link.active {
+        color: #0d6efd !important;
+        font-weight: bold;
+        border-bottom: 2px solid #0d6efd;
+      }
+      .footerwala {
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <!-- ✅ Navbar -->
+      <div class="row">
+        <div class="col-sm-12 m-0 p-0">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <img src="{% static 'img/crm.jpg' %}" height="60px" width="100px">
+
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul id="navbar" class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/about/' %}active{% endif %}" href="{% url 'about' %}">About</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/contact/' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/register/' %}active{% endif %}" href="{% url 'register' %}">Register</a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link {% if request.path == '/login/' %}active{% endif %}" href="{% url 'login' %}">Login</a>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <!-- ✅ Navbar End -->
+
+      <!-- ✅ Main Content -->
+      {% block main %}
+      {% endblock %}
+
+      <!-- ✅ Footer -->
+           <div class="row bg-primary py-5 m-o p-0 footerwala">
+      <div class="col-sm-11 mx-auto ">
+     
+        <div class="row mt-2">
+        <div class="col-sm-4 text-light ">
+          <h3>Welcome To CRM</h3><hr>
+          <p class="cc mb-5"><small> Let's define CRM
+CRM stands for customer relationship management, which is a system for managing all of your company’s interactions with current and potential customers. The goal is simple: improve relationships to grow your business. CRM technology helps companies stay connected to customers, streamline processes, and improve profitability.</small></p>
+          <h5>Follow us</h5>
+          <style>
+            .cc{
+              text-align: justify;
+            }
+            .iconcir1{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3B5998;
+  margin-right: 15px;
+}
+
+.iconcir2{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #55ACEE;
+  margin-right: 15px;
+}
+.iconcir3{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DD4B39;
+}
+.iconcir{
+  display: flex;
+}
+          </style>
+          <div class="iconcir">
+           <a href="#" class="text-decoration-none text-light"> <div class="iconcir1"><i class="fab fa-facebook-f facebook-bg"></i></div></a>
+          <a href="#" class="text-light"><div class="iconcir2"><i class="fab fa-twitter twitter-bg"></i></div></a>
+           <a href="#" class="text-light"><div class="iconcir3"><i class="fab fa-google-plus-g google-bg"></i></div></a>
+          </div>
+        </div>
+        <div class="col-sm-4 p-3  text-light text-start">
+          <h4>Useful Link</h4>
+          <div class="underline"></div>
+          <div class="d-flex py-3">
+            <div class="w-50 text-start colorfield">
+              <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="#">services</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+              </ul>
+            </div>
+            <style>
+              .colorfield ul li a {
+                color: white;
+              }
+            </style>
+            <div class="w-50 colorfield">
+              <ul>
+                <li><a href="{% url 'about' %}">About us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Expert Team</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>
+                <li><a href="#">Latest News</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4 p-3  text-light">
+      <h4>Subscribe</h4>
+      <div class="underline "></div>
+      <p class="mt-4 fw-semibold"><small> Don't miss to subscribe to our new feeds, kindly fill the form<br> below.</small></p>
+      <div class="position-relative">
+      <input type="text"class="form-control position-absolute py-3 rounded-1 "/>
+      <button type="button"class="btn btn-warning position-absolute end-0 me-2 m-2 rounded-1"><i class="fa-brands fa-telegram"></i></button>
+        </div>
+        </div>
+      </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-11 mx-auto">
+        <div class="row text-light ">
+          <div class="col-sm-6">  <p  class="mt-5">© Copyright 2025 Designed & Developed By |<samp class="text-warning"> Anand Mishra.</samp></p></div>
+          <div class="col-sm-6 text-end mt-5 text-light  ">
+            <div class="">
+          <a href="{% url 'index' %}" class="text-light me-3"> <span>Home |</span></a>
+          <a href="#" class="text-light me-3"> <span>Terms |</span></a>
+          <a href="#" class="text-light me-3"> <span>Privacy |</span></a>
+          <a href="#" class="text-light me-3"> <span>Policy  |</span></a>
+          <a href="{% url 'contact' %}" class="text-light me-3"> <span>Contact  |</span></a>
+            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+       </div>
+       
+        
+        </div>
+          </div>
+      <!-- ✅ Footer End -->
+    </div>
+  </body>
+</html>

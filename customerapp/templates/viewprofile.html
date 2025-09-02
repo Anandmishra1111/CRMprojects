@@ -1,0 +1,38 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block customer %}
+<h4>Customer / Profile</h4>
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+        <div class="card p-4">
+            <div class="text-center">
+                {% if customer.picture %}
+                    <img src="{{ customer.picture.url }}" alt="Profile Picture" height="120px" class="rounded-circle">
+                {% else %}
+                    No profile picture
+                {% endif %}
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-sm-6">
+                    Name <b>{{customer.name}}</b>
+                </div>
+                
+                <div class="col-sm-6">
+                    Email <b>{{customer.email}}</b>
+                </div>
+               
+                <div class="col-sm-6">
+                    Contact No <b>{{customer.contactno}}</b>
+                </div>
+                 <div class="col-sm-6">
+                    Gender <b>{{customer.gender}}</b>
+                </div>
+                 <div class="col-sm-6">
+                    Address <b>{{customer.address}}</b>
+                </div>
+                <a href="{% url 'updateprofile' %}"  class="btn btn-primary"> Update Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

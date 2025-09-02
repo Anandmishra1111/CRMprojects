@@ -1,0 +1,46 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block customer %}
+<h4>Customer / Products</h4>
+<div class="row">
+    <div class="col-sm-12">
+         <table class="table">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>Mfg Date</th>
+                    <th>Expiry Date</th>
+                    <th>Picture</th>
+                    <th>Added Date</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+               {% for p in products %}
+               <tr>
+                <td>
+                    {{forloop.counter}}
+                </td>
+                <td>{{p.name}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.mfgdate}}</td>
+                <td>{{p.expdate}}</td>
+                <td>
+                    <img src="{{p.picture.url}}" alt="" height="100px">
+                </td>
+                <td>
+                  
+                    {{p.created_at}}
+                </td>
+               
+               </tr>
+               {% endfor %}
+            </tbody>
+           </table>
+    </div>
+</div>
+{% endblock %}

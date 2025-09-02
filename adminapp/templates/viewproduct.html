@@ -1,0 +1,68 @@
+{% extends 'adminbase.html'  %}
+{% load static %}
+{% block admin %}
+
+<!-- [ breadcrumb ] start -->
+<div class="page-header">
+    <div class="page-block">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <div class="page-header-title">
+            <h4 class="m-b-10"> View Product</h4>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="card">
+           <table class="table">
+            <thead>
+                <tr>
+                    <th>S.NO</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>Mfg Date</th>
+                    <th>Expiry Date</th>
+                    <th>Picture</th>
+                    <th>Added Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+               {% for p in products %}
+               <tr>
+                <td>
+                    {{forloop.counter}}
+                </td>
+                <td>{{p.name}}</td>
+                <td>{{p.description}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.mfgdate}}</td>
+                <td>{{p.expdate}}</td>
+                <td>
+                    <img src="{{p.picture.url}}" alt="" height="100px">
+                </td>
+                <td>
+                  
+                    {{p.created_at}}
+                </td>
+                <td>
+                  <a href="{% url 'delproduct' p.pid %}" class="btn btn-outline-danger">Delete</a>
+                </td>
+               </tr>
+               {% endfor %}
+            </tbody>
+           </table> 
+        </div>
+    </div>
+  </div>
+   
+  
+
+
+{% endblock %}
