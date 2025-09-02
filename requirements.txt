@@ -1,0 +1,14 @@
+Django==5.2
+djangorestframework
+pytz
+sqlparse
+asgiref
+Pillow
+django-crispy-forms
+django-filter
+django-allauth
+django-ckeditor
+django-cors-headers
+django-environ
+django-debug-toolbar
+requests
