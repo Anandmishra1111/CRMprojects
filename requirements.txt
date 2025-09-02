@@ -12,3 +12,7 @@ django-cors-headers
 django-environ
 django-debug-toolbar
 requests
+gunicorn
+psycopg2-binary
+python-dotenv
+whitenoise
